@@ -43,6 +43,7 @@ public class DakeOfCards {
 
 	/**
 	 * UC-4 Method to shuffle the 52 cards using random class
+	 * 
 	 * @param deckOfCards
 	 * @return
 	 */
@@ -57,4 +58,23 @@ public class DakeOfCards {
 		}
 		return deckOfCards;
 	}
+
+	
+	/**
+	 * UC-5 Method to distribute 52 cards in 4 players
+	 * @param players
+	 * @param deck
+	 * @return
+	 */
+	public static Players[] distributeCards(Players[] players, Card[] deck) {
+
+		int numOfCardsPerPlayer = deck.length / players.length;
+		for (int i = 0; i < deck.length; i++) {
+			int positionInHand = i % numOfCardsPerPlayer;
+			players[i % players.length].receiveCard(deck[i], positionInHand);
+		}
+		
+		return players;
+	}
+
 }
