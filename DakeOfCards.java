@@ -76,5 +76,21 @@ public class DakeOfCards {
 		
 		return players;
 	}
-
+	
+	/**
+	 * Method to print cards received by players
+	 * @param deckOfCards
+	 */
+	 public static void showCards(Card[] deckOfCards) {
+	    	
+	        System.out.println("---------------------------------------------");
+	        int count = 0;
+	        for (Card card : deckOfCards) {
+	            System.out.printf("%s of %s\t", card.rank, card.suit);
+	            count++;
+	            if (count % 4 == 0)
+	                System.out.println();
+	        }
+	        System.out.println("---------------------------------------------");
+	    }
 }

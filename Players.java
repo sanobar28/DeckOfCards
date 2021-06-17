@@ -12,7 +12,20 @@ public class Players {
 	Players(String name) {
 		this.name = name;
 	}
+	
+	/**
+	 * UC-6 Method to print the cards each player got 
+	 */
+	public void showPlayerCards() {
+		System.out.println("---------------------------------------------");
+		for (Card card : cards) {
 
+			System.out.printf("%s  of %s\n", card.rank, card.suit);	
+		}
+		
+		System.out.println("---------------------------------------------");
+	}
+	
 	public void receiveCard(Card card, int position) {
 		cards[position] = card;
 	}
